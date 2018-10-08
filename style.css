@@ -51,7 +51,7 @@ body {
     float: left;
 }
 .big-wrapper {
-    width: 40%;
+    width: 30%;
     padding: 2rem;
 }
 .active-users-wrapper {
@@ -72,26 +72,37 @@ body {
     height: 50%;
 
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> master
 .changes .changes-card{
     height: 8rem;
-    width: 90%;
+    width: 100%;
     background-color: #36effe;
-    margin-bottom: 20px;
-    border-radius: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
+    justify-content: space-around;
   }
 
 
 .changes-card img {
-    margin: 8px 8px 8px 40px;
-    height: 60%;
+    height: 50px;
     border-radius: 20px;
+    margin-left: 5px;
 }
 
 
+<<<<<<< HEAD
 .site-and-time {
     width: 100%;
+=======
+
+  .site-and-time{
+>>>>>>> master
     display: flex;
     flex-direction: column;
     align-items: flex-start;
