@@ -62,6 +62,11 @@ body {
     background-color:black; 
 
 }
+
+.changes p {
+    font-size: 2rem;
+}
+
 .changes .changes-card{
     height: 8rem;
     width: 90%;
@@ -82,7 +87,7 @@ body {
 
 
   .site-and-time{
-    width: 100%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
