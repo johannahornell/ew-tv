@@ -65,6 +65,15 @@ body {
 .changes .changes-card{
     height: calc(100%/4);
     width: 90%;
-    background-color:#36effe;
+    background-color: #36effe;
     margin-top: 5px;
   }
+
+
+  .changes-card img{
+    margin: 8px;
+    height: 90%;
+    background-color: white;
+    border-radius: 20px;
+  }
+
