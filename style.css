@@ -54,23 +54,52 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 40%;
-    height: 50%;
-    background-color:#FFF; 
+    width: 20%;
+    height: 100%;
+    background-color:black; 
 
 }
 .changes .changes-card{
-    height: calc(100%/4);
+    height: 8rem;
     width: 90%;
     background-color: #36effe;
-    margin-top: 5px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
   }
 
 
   .changes-card img{
-    margin: 8px;
-    height: 90%;
-    background-color: white;
+    margin: 8px 8px 8px 40px;
+    height: 60%;
+    
     border-radius: 20px;
   }
 
+
+  .site-and-time{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 60px;
+  }
+
+  .site-and-time h1{
+      margin:0.3px;
+      font-size: 2rem;
+  }
+
+  .site-and-time p{
+    margin:0.3px;
+    font-size: 1.5rem;
+
+  }
+
+  .changes h2{
+      color: white;
+      font-size: 3rem;
+  }
+
+ 
