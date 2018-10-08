@@ -72,11 +72,6 @@ body {
     height: 50%;
 
 }
-<<<<<<< HEAD
-=======
-
-
->>>>>>> master
 .changes .changes-card{
     height: 8rem;
     width: 100%;
@@ -87,22 +82,13 @@ body {
     align-items: center;
     justify-content: space-around;
   }
-
-
 .changes-card img {
     height: 50px;
     border-radius: 20px;
     margin-left: 5px;
 }
 
-
-<<<<<<< HEAD
 .site-and-time {
-    width: 100%;
-=======
-
-  .site-and-time{
->>>>>>> master
     display: flex;
     flex-direction: column;
     align-items: flex-start;
