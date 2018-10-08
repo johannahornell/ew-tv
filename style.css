@@ -50,6 +50,9 @@ body {
 .name-stats {
     float: left;
 }
+.big-wrapper {
+    width: 40%;
+}
 .changes {
     display: flex;
     align-items: center;
