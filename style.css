@@ -52,14 +52,17 @@ body {
 }
 .big-wrapper {
     width: 40%;
+    padding: 2rem;
+}
+.active-users {
+    height: 50%;
 }
 .changes {
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100%;
-    background-color:black; 
+    height: 50%;
 
 }
 
@@ -78,36 +81,30 @@ body {
   }
 
 
-  .changes-card img{
+.changes-card img {
     margin: 8px 8px 8px 40px;
     height: 60%;
-    
     border-radius: 20px;
-  }
+}
 
 
+<<<<<<< HEAD
+.site-and-time {
+    width: 100%;
+=======
   .site-and-time{
     width: 70%;
+>>>>>>> master
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-left: 60px;
-  }
+}
 
-  .site-and-time h1{
-      margin:0.3px;
-      font-size: 2rem;
-  }
+.site-and-time h1 {
+    margin: 0.3px;
+}
 
-  .site-and-time p{
-    margin:0.3px;
-    font-size: 1.5rem;
-
-  }
-
-  .changes h2{
-      color: white;
-      font-size: 3rem;
-  }
-
- 
+.site-and-time p {
+    margin: 0.3px;
+}
