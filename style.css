@@ -52,6 +52,10 @@ body {
 }
 .big-wrapper {
     width: 40%;
+    padding: 2rem;
+}
+.active-users {
+    height: 50%;
 }
 .changes {
     display: flex;
