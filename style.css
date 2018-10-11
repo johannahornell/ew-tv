@@ -102,10 +102,10 @@ body {
     float: left;
 }
 .section-container h1 {
-    color: #adadad;
-    font-weight: 400;
+    font-size: 1.8rem;
+    font-weight: 300;
     margin-top: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 /* --- Senast ändrat --- */
@@ -113,17 +113,19 @@ body {
     width: 44%;
 }
 .changes-container {
-    width: 60%;
+    width: 65%;
 }
 .latest-changes, .online-users, .top-visited {
     margin: 0.5rem 0;
     padding: 0.5rem;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 .latest-changes:first-of-type, .online-users:first-of-type, .top-visited:first-of-type {
     background-color: #fff;
     box-shadow: 0px 1px 30px 0px rgba(0,0,0,0.06);
+        padding: 1rem;
 }
 .latest-changes div {
     display: flex;
@@ -139,12 +141,12 @@ body {
     margin: 0 0.5rem;
 }
 .changes-time {
-    color: #adadad;
+    color: #a0a0a0;
 }
 
 /* --- Boxarna --- */
 .box-wrapper {
-    color: #adadad;
+    color: #a0a0a0;
     float: left;
     width: 16.6%;
     height: 100%;
@@ -153,6 +155,10 @@ body {
 }
 .box-container {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 .box {
     position: relative;
@@ -239,22 +245,46 @@ body {
 .online-users p, .top-visited p {
     display: inline-block;
     margin: 0;
+    z-index: 999;
 }
 .total-visitors {
     font-weight: 700;
+    margin-right: 0.5rem;
+}
+.star {
+    position: absolute;
+    top: -1px;
+    right: 88px;
+    height: 54px;
+    width: 54px;
+    z-index: 998;
+    transform: scale(1);
+    animation: infinite-spinning 10s linear infinite;
+}
+
+@keyframes infinite-spinning {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* --- Spotify --- */
 .spotify-wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    filter: drop-shadow(1px 1px 10px rgba(0,0,0,0.06));
+}
+.spotify-clippath {
     background-color: #fff;
     color: #adadad;
     font-size: 0.9rem;
     padding: 1.5rem;
     padding-left: 4rem;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    box-shadow: 0px 1px 40px 2px rgba(0,0,0,0.1);
     -webkit-clip-path: polygon(12% 0%, 100% 0, 100% 100%, 0% 100%);
     clip-path: polygon(12% 0%, 100% 0, 100% 100%, 0% 100%);
 }
@@ -277,3 +307,39 @@ body {
 .song-time {
     color: #adadad;
 }
+
+/* --- Topplista --- */
+.top-team-wrapper {
+    width: 60%;
+}
+.top-team-container {
+    width: 60%;
+}
+
+.hexagon2 {
+    position: relative;
+    width: 40px;
+    height: 23.09px;
+    background-color: #64C7CC;
+    margin: 11.55px 0;
+}
+
+    .hexagon2:before,
+    .hexagon2:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+    }
+
+    .hexagon2:before {
+        bottom: 100%;
+        border-bottom: 11.55px solid #64C7CC;
+    }
+
+    .hexagon2:after {
+        top: 100%;
+        width: 0;
+        border-top: 11.55px solid #64C7CC;
+    }
