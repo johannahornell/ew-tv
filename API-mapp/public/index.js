@@ -172,41 +172,41 @@ $("#btn").click(function () {
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------- */
 
-//Easyweb API Get users and lastseeen
-var urlUsers = "http://local.easyweb.se/internalapi/easywebtv/loggedinusers";
-var urlSites = "http://local.easyweb.se/internalapi/easywebtv/unionstatistics";
+// //Easyweb API Get users and lastseeen
+// var urlUsers = "http://local.easyweb.se/internalapi/easywebtv/loggedinusers";
+// var urlSites = "http://local.easyweb.se/internalapi/easywebtv/unionstatistics";
 
-$.ajax({
-  type: "GET",
-  url: urlUsers,
-  dataType: "json",
+// $.ajax({
+//   type: "GET",
+//   url: urlUsers,
+//   dataType: "json",
 
-  success: function (data) {
-    jQuery.each(data, function (index, user) {
-      $(".logged-in").append(
-        "<li>" + user.userName + "</li>",
-        "<li>" + user.lastSeen + "</li> <br>"
-      );
-    });
-  }
-});
+//   success: function (data) {
+//     jQuery.each(data, function (index, user) {
+//       $(".logged-in").append(
+//         "<li>" + user.userName + "</li>",
+//         "<li>" + user.lastSeen + "</li> <br>"
+//       );
+//     });
+//   }
+// });
 
-//Easyweb API get site statistics
-$.ajax({
-  type: "GET",
-  url: urlSites,
-  dataType: "json",
+// //Easyweb API get site statistics
+// $.ajax({
+//   type: "GET",
+//   url: urlSites,
+//   dataType: "json",
 
-  success: function (data) {
-    jQuery.each(data, function (index, site) {
-      $(".stats").append(
-        "<li> Site name: " + site.name + "</li>",
-        "<li>Site URL: " + site.url + "</li>",
-        "<li>Site count: " + site.count + "</li> <br>"
-      );
-    });
-  }
-});
+//   success: function (data) {
+//     jQuery.each(data, function (index, site) {
+//       $(".stats").append(
+//         "<li> Site name: " + site.name + "</li>",
+//         "<li>Site URL: " + site.url + "</li>",
+//         "<li>Site count: " + site.count + "</li> <br>"
+//       );
+//     });
+//   }
+// });
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------- */
 
@@ -368,7 +368,7 @@ function refresh() {
 
 // })
 
-setInterval(function () {
-  console.log("tick");
-  refresh();
-}, 2000);
+// setInterval(function () {
+//   console.log("tick");
+//   refresh();
+// }, 2000);

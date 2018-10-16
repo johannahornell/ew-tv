@@ -4,8 +4,8 @@ var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 
-var client_id = '595cff25e5cf406a80bd1d5ec5193285'; // Your client id
-var client_secret = '630231c7f215459298cf67f8855106e0'; // Your secret
+// var client_id = '595cff25e5cf406a80bd1d5ec5193285'; // Your client id
+// var client_secret = '630231c7f215459298cf67f8855106e0'; // Your secret
 var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
 
 /**
@@ -27,9 +27,14 @@ var stateKey = 'spotify_auth_state';
 
 var app = express();
 
-app.use(express.static(__dirname + '/'))
+app.use(express.static(__dirname + '/public'))
   .use(cors())
   .use(cookieParser());
+
+// app.use(function (req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   next();
+// });
 
 app.get('/login', function (req, res) {
 
@@ -41,18 +46,19 @@ app.get('/login', function (req, res) {
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({
       response_type: 'code',
-      client_id: client_id,
+      client_id: process.env.SPOTIFY_CLIENT_ID,
       scope: scope,
-      redirect_uri: redirect_uri,
+      redirect_uri,
       state: state
     }));
+  console.log("Login körs");
 });
 
 app.get('/callback', function (req, res) {
 
   // your application requests refresh and access tokens
   // after checking the state parameter
-
+  console.log("Callaback körs");
   var code = req.query.code || null;
   var state = req.query.state || null;
   var storedState = req.cookies ? req.cookies[stateKey] : null;
@@ -64,6 +70,7 @@ app.get('/callback', function (req, res) {
       }));
   } else {
     res.clearCookie(stateKey);
+    console.log("callback else works");
     var authOptions = {
       url: 'https://accounts.spotify.com/api/token',
       form: {
@@ -72,16 +79,19 @@ app.get('/callback', function (req, res) {
         grant_type: 'authorization_code'
       },
       headers: {
-        'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
+        Authorization: 'Basic ' + (new Buffer(process.env.SPOTIFY_CLIENT_ID + ':' + process.env.SPOTIFY_CLIENT_SECRET).toString('base64'))
       },
       json: true
-    };
 
+    };
     request.post(authOptions, function (error, response, body) {
       if (!error && response.statusCode === 200) {
-
-        var access_token = body.access_token,
-          refresh_token = body.refresh_token;
+        
+        var access_token = body.access_token;
+        var refresh_token = body.refresh_token;
+    
+        var uri = '/';
+        res.redirect(uri + '?access_token=' + access_token)
 
         var options = {
           url: 'https://api.spotify.com/v1/me',
@@ -91,15 +101,15 @@ app.get('/callback', function (req, res) {
 
         // use the access token to access the Spotify Web API
         request.get(options, function (error, response, body) {
-          console.log(body, options);
+          
         });
 
         // we can also pass the token to the browser to make requests from there
-        res.redirect('/#' +
-          querystring.stringify({
-            access_token: access_token,
-            refresh_token: refresh_token
-          }));
+        // res.redirect('/#' +
+        //   querystring.stringify({
+        //     access_token: access_token,
+        //     refresh_token: refresh_token
+        //   }));
       } else {
         res.redirect('/#' +
           querystring.stringify({
@@ -134,5 +144,6 @@ app.get('/refresh_token', function (req, res) {
   });
 });
 
-console.log('Listening on 8888');
+let port = process.env.PORT || 8888
+console.log("Listening on port: " + port)
 app.listen(8888);
