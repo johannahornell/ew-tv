@@ -1,44 +1,251 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+
+<html>
 
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./index.css">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <title>API</title>
+    <script src="http://malsup.github.com/jquery.cycle2.js"></script>
+    <title>EWTV</title>
 </head>
 
 <body>
-    <button class="btn" id="btn">Click me</button>
-    <button id="btnrev">
-        click
-    </button>
-    <a href="http://localhost:8888/login" class="btnMusic" id="btn-login">Current Music Login</a>
-    <button href="" class="btnMusic" id="btn-refToken">Refresh Access-Token</button>
-    <h2>Spotify</h2>
-    <div class="spotify"></div>
-    <hr>
-    <div class="container">
 
-        <ul class="missions">
-            <h4>Missions</h4>
-        </ul>
-        <hr>
-        <ul class="quests">
-            <h4>Quests</h4>
-        </ul>
-        <hr>
-        <ul class="late"></ul>
-        <ul class="logged-in"></ul>
-        <ul class="stats"></ul>
-        <ul class="tickets"></ul>
-        <div class="list"></div>
+    <div class="ewtv-overview">
+        <h1>EWTV</h1>
+        <div>
+            <div class="ewtv-mission">
+                <p>Missions</p>
+                <span id="ewtv-mission-amount" class="mission-amount">0</span>
+            </div>
+            <div class="hexagon">
+                <p>EW</p>
+                <span class="online-overview">14</span>
+            </div>
+            <div class="ewtv-tickets">
+                <p>SEO kunder</p>
+                <span id="seo-customers" class="new-tickets-number"></span>
+            </div>
+        </div>
     </div>
-</body>
 
-<script src="./index.js" type="text/javascript"></script>
-<script src="./spotApp.js" type="text/javascript"></script>
+    <div id="slide-container" class="slide-container  cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-timeout="60000"
+        data-cycle-speed="2000" data-cycle-slides="> div" data-cycle-log="false">
+        <div class="slide1">
+            <section class="section-wrapper changes-wrapper">
+                <div class="section-container changes-container">
+                    <!-- Fylls på med content från js -->
+                </div>
+            </section>
+
+            <div class="box-wrapper">
+                <div class="box-container">
+                    <div class="box">
+                        <div class="box-content">
+                            <div>
+                                <p>Inloggade just nu</p>
+                                <span id="online-amount" class="online-amount">14</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="box-content">
+                            <div>
+                                <p class="no-margin">Besökare idag</p>
+                                <p>(alla unioner)</p>
+                                <span class="visitors-today">24 045</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="box-content">
+                            <p class="pie-text"><span class="mobile-percentage">27%</span> Mobila användare</p>
+                            <div class="pie-wrapper">
+                                <div class="pie-container" id="container"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="section-wrapper user-wrapper">
+                <div class="flex-fix">
+                    <div class="section-container user-container">
+                        <h1>Användare</h1>
+                        <div class="online-users">
+                            <div>
+                                <span class="user-email">robert@sphinxly.se</span>
+                            </div>
+                            <span class="changes-time">12.05 idag</span>
+                        </div>
+                        <div class="online-users">
+                            <div>
+                                <span class="user-email">robert@sphinxly.se</span>
+                            </div>
+                            <span class="changes-time">12.05 idag</span>
+                        </div>
+                        <div class="online-users">
+                            <div>
+                                <span class="user-email">robert@sphinxly.se</span>
+                            </div>
+                            <span class="changes-time">12.05 idag</span>
+                        </div>
+                        <div class="online-users">
+                            <div>
+                                <span class="user-email">robert@sphinxly.se</span>
+                            </div>
+                            <span class="changes-time">12.05 idag</span>
+                        </div>
+                        <div class="online-users">
+                            <div>
+                                <span class="user-email">robert@sphinxly.se</span>
+                            </div>
+                            <span class="changes-time">12.05 idag</span>
+                        </div>
+                        <div class="online-users">
+                            <div>
+                                <span class="user-email">robert@sphinxly.se</span>
+                            </div>
+                            <span class="changes-time">12.05 idag</span>
+                        </div>
+                        <div class="online-users">
+                            <div>
+                                <span class="user-email">robert@sphinxly.se</span>
+                            </div>
+                            <span class="changes-time">12.05 idag</span>
+                        </div>
+                    </div>
+
+                    <div class="section-container">
+                        <h1>Unioner idag</h1>
+                        <div class="top-visited">
+                            <div>
+                                <span class="top-company">Astrada.se</span>
+                            </div>
+                            <p><span class="total-visitors most-visited">2817</span> besökare</p>
+                            <img src="images/shape.png" class="star" />
+                        </div>
+                        <div class="top-visited">
+                            <div>
+                                <span class="top-company">Äktavara.org</span>
+                            </div>
+                            <p><span class="total-visitors">1125</span> besökare</p>
+                        </div>
+                        <div class="top-visited">
+                            <div>
+                                <span class="top-company">Pizzahut.se</span>
+                            </div>
+                            <p><span class="total-visitors">587</span> besökare</p>
+                        </div>
+                        <div class="top-visited">
+                            <div>
+                                <span class="top-company">Kunden.com</span>
+                            </div>
+                            <p><span class="total-visitors">145</span> besökare</p>
+                        </div>
+                        <div class="top-visited">
+                            <div>
+                                <span class="top-company">Sphinxly.se</span>
+                            </div>
+                            <p><span class="total-visitors">117</span> besökare</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="slide2">
+            <section class="section-wrapper top-team-wrapper">
+                <div class="section-container top-team-width">
+                    <div class="active">
+                        <h1>Aktiva ärenden</h1>
+                        <div class="box2 box2-mission">
+                            <div class="box-content">
+                                <div>
+                                    <span id="mission-amount">0</span>
+                                    <p>Missions</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box2 box2-quests">
+                            <div class="box-content">
+                                <div>
+                                    <span id="quest-amount">0</span>
+                                    <p>Quests</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box2 box2-sidequests">
+                            <div class="box-content">
+                                <div>
+                                    <span id="sidequest-amount">0</span>
+                                    <p>Sidequests</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="top-team-container">
+                        <h1>Topplista</h1>
+                        <!-- Fylls på med content från js -->
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-wrapper ticket-wrapper">
+                <div class="section-container ticket-container">
+                    <h1>Sidequests</h1>
+                    <div id="new-tickets" class="ticket-category current-category">
+                        <span id="new-amount"></span>
+                        <p>New</p>
+                    </div>
+                    <div id="newest-new-container" class="newest-new-container"></div>
+                    <div id="assigned-tickets" class="ticket-category">
+                        <span id="assigned-amount"></span>
+                        <p>Assigned</p>
+                    </div>
+                    <div id="newest-assigned-container" class="newest-assigned-container"></div>
+                    <div id="waiting-tickets" class="ticket-category">
+                        <span id="waiting-amount"></span>
+                        <p>Waiting on customer</p>
+                    </div>
+                    <div id="newest-waiting-container" class="newest-waiting-container"></div>
+                    <div id="onhold-tickets" class="ticket-category">
+                        <span id="onhold-amount"></span>
+                        <p>On-hold</p>
+                    </div>
+                    <div id="newest-onhold-container" class="newest-onhold-container"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <section class="spotify-wrapper">
+        <div class="spotify-clippath">
+            <div class="spotify-container">
+                <a href="/login" id="refreshLogin">
+                    <div class="spotify-pulse"></div>
+                </a>
+                <span class="band-name" id="artist"></span>
+                /
+                <span class="song-title" id="title"></span>
+                <span class="song-time" id="songTime"></span>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+    <script src="script.js"></script>
+    <script src="spotApp.js"></script>
+
+</body>
 
 </html>

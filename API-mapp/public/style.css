@@ -1,0 +1,564 @@
+﻿html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+body {
+    color: #000;
+    background-image: url("images/pw_maze_white.png");
+    background-repeat: repeat;
+    background-color: #f4f4f4;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+}
+
+/* --- EWTV --- */
+.ewtv-overview {
+    background-color: #fff;
+    width: 7%;
+    height: 100%;
+    position: absolute;
+    box-shadow: 0px 1px 40px 2px rgba(0,0,0,0.1);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 9999;
+    
+}
+.ewtv-overview h1 {
+    position: absolute;
+    top: 0;
+    margin: 2rem 0;
+}
+.ewtv-mission {
+    margin-bottom: 4rem;
+}
+.ewtv-overview p {
+    color: #5d5d5d;
+    margin-bottom: 0;
+}
+.mission-amount {
+    color: #00c4ee;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 2rem;
+}
+.hexagon {
+    position: relative;
+    width: 80px;
+    height: 46.19px;
+    margin: 0 auto;
+    border-left: solid 3px #000000;
+    border-right: solid 3px #000000;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.hexagon:before, .hexagon:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 56.57px;
+    height: 56.57px;
+    -webkit-transform: scaleY(0.5774) rotate(-45deg);
+    -ms-transform: scaleY(0.5774) rotate(-45deg);
+    transform: scaleY(0.5774) rotate(-45deg);
+    left: 8.7157px;
+}
+.hexagon:before {
+    top: -28.2843px;
+    border-top: solid 4.2426px #000000;
+    border-right: solid 4.2426px #000000;
+}
+.hexagon:after {
+    bottom: -28.2843px;
+    border-bottom: solid 4.2426px #000000;
+    border-left: solid 4.2426px #000000;
+}
+.hexagon p {
+    position: absolute;
+    top: -22px;
+}
+.online-overview {
+    color: #ff4abd;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 2rem;
+}
+.ewtv-tickets {
+    margin-top: 4rem;
+}
+.new-tickets-number {
+    color: #c467e6;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 2rem;
+}
+
+/* --- Slide container --- */
+.slide-container {
+    height: 100%;
+    width: 93%;
+    float: right;
+    overflow: hidden;
+}
+.slide1, .slide2 {
+    background-image: url("images/pw_maze_white.png");
+    height: 100%;
+    width: 100%;
+    float: left;
+    display: inline;
+}
+.slide1 {
+    display: block;
+}
+.slide2 {
+    display: none;
+}
+/* --- Sections --- */
+.section-wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+.section-container h1 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0 0 1.5rem 1rem;
+}
+
+/* --- Senast ändrat --- */
+.changes-wrapper {
+    width: 44%;
+}
+.changes-container {
+    width: 70%;
+}
+.latest-changes, .online-users, .top-visited {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.latest-changes:first-of-type, .online-users:first-of-type, .top-visited:first-of-type {
+    background-color: #fff;
+    box-shadow: 0px 1px 30px 0px rgba(0,0,0,0.06);
+    padding: 1rem;
+}
+.latest-changes div {
+    display: flex;
+    align-items: center;
+}
+.changes-company, .user-email, .top-company {
+    font-weight: 700;
+}
+.changes-company {
+    margin: 0 0.5rem;
+}
+.changes-page {
+    margin: 0 0.5rem;
+}
+.changes-time {
+    color: #5d5d5d;
+}
+
+/* --- Boxarna --- */
+.box-wrapper {
+    color: #5d5d5d;
+    float: left;
+    width: 16%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.box-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.box {
+    position: relative;
+    width: 90%;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 1px 30px 0px rgba(0,0,0,0.06);
+    margin-bottom: 2rem;
+}
+.box:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+.box-content {
+    font-size: 1.3rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+.box-content p {
+    margin-top: 0;
+}
+.pie-wrapper {
+    padding-top: 80px;
+}
+.pie-text {
+    position: absolute;
+    top: 30px;
+}
+.online-amount {
+    color: #ff4abd;
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 5rem;
+}
+.visitors-today {
+    color: #c467e6;
+    font-size: 3.4rem;
+    font-weight: 700;
+}
+.no-margin {
+    margin: 0;
+}
+.mobile-percentage {
+    color: #000;
+    font-weight: 700;
+}
+
+/* --- Highchart --- */
+.highcharts-exporting-group {
+    display: none;
+}
+.highcharts-credits {
+    display: none;
+}
+.highcharts-background {
+    height: auto;
+}
+.highcharts-legend {
+    display: none;
+}
+.highcharts-title {
+    display: none;
+}
+
+/* --- Online användare och mest besökta--- */
+.user-wrapper {
+    width: 40%;
+}
+.flex-fix {
+    width: 60%;
+}
+.user-container {
+    margin-bottom: 3rem;
+}
+.online-users p, .top-visited p {
+    display: inline-block;
+    margin: 0;
+    z-index: 999;
+}
+.total-visitors {
+    font-weight: 700;
+    margin-right: 0.5rem;
+}
+.most-visited {
+    color: #fff;
+}
+.star {
+    position: absolute;
+    top: -2px;
+    right: 95px;
+    height: 60px;
+    width: 60px;
+    z-index: 998;
+    transform: scale(1);
+    animation: infinite-spinning 10s linear infinite;
+}
+
+@keyframes infinite-spinning {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- Spotify --- */
+.spotify-wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    filter: drop-shadow(1px 1px 10px rgba(0,0,0,0.06));
+}
+.spotify-clippath {
+    background-color: #fff;
+    color: #adadad;
+    font-size: 1rem;
+    padding: 1.8rem;
+    padding-left: 5rem;
+    -webkit-clip-path: polygon(12% 0%, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(12% 0%, 100% 0, 100% 100%, 0% 100%);
+}
+.spotify-container {
+    display: flex;
+    align-items: center;
+}
+.spotify-pulse {
+    display: block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-image: url(images/spotify.png);
+    background-size: contain;
+    animation: pulse 1.5s infinite;
+    margin-right: 8px;
+}
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(30, 215, 96, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(30, 215, 96, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(30, 215, 96, 0);
+    }
+}
+.band-name {
+    color: #000;
+    font-weight: 700;
+    margin: 0 0.5rem;
+}
+.song-title {
+    color: #000;
+    margin: 0 0.5rem;
+}
+.song-time {
+    color: #adadad;
+}
+
+/* --- Topplista --- */
+.top-team-wrapper {
+    width: 50%;
+}
+.active {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+.active h1 {
+    width: 100%;
+    margin-left: 0;
+}
+.box2 {
+    color: #fff;
+    font-weight: 700;
+    position: relative;
+    width: 30%;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 1px 30px 0px rgba(0,0,0,0.15);
+    margin-bottom: 2rem;
+}
+.box2:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+.box2-mission {
+    background-color: #00c4ee;
+}
+.box2-quests {
+    background-color: #0071ac;
+}
+.box2-sidequests {
+    background-color: #7900ac;
+}
+.box2 span {
+    font-size: 3.5rem;
+}
+.top-team-width {
+    width: 70%;
+}
+.top-team-container h1 {
+    margin-left: 0;
+}
+.top-team {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.top-name {
+    width: 80px;
+    font-size: 1.5rem;
+}
+.top-name::first-letter {
+    text-transform: capitalize;
+}
+.hexagon-container {
+    display: flex;
+    color: #fff;
+    font-weight: 700;
+}
+.hexagon2 {
+    position: relative;
+    width: 50px;
+    height: 28.87px;
+    margin: 14.43px 5px;
+}
+.hexagon2:before,
+.hexagon2:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+}
+.hexagon-mission:before {
+    bottom: 100%;
+    border-bottom: 14.43px solid #00c4ee;
+}
+.hexagon-mission:after {
+    top: 100%;
+    left: 0;
+    width: 0;
+    border-top: 14.43px solid #00c4ee;
+}
+.hexagon-quest:before {
+    bottom: 100%;
+    border-bottom: 14.43px solid #0071ac;
+}
+.hexagon-quest:after {
+    top: 100%;
+    left: 0;
+    width: 0;
+    border-top: 14.43px solid #0071ac;
+}
+.hexagon-sidequest:before {
+    bottom: 100%;
+    border-bottom: 14.43px solid #7900ac;
+}
+.hexagon-sidequest:after {
+    top: 100%;
+    left: 0;
+    width: 0;
+    border-top: 14.43px solid #7900ac;
+}
+.hexagon-mission {
+    background-color: #00c4ee;
+}
+.hexagon-quest {
+    background-color: #0071ac;
+}
+.hexagon-sidequest {
+    background-color: #7900ac;
+}
+.hexagon-text {
+    font-size: 1.3rem;
+    text-align: center;
+}
+.xp-points {
+    width: 70px;
+    text-align: right;
+    font-size: 1.2rem;
+}
+/* --- Tickets --- */
+.ticket-wrapper {
+    width: 50%;
+}
+.ticket-container {
+    width: 70%;
+}
+.ticket-category {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0px 1px 30px 0px rgba(0,0,0,0.06);
+    transition: all 1s;
+}
+.ticket-category span {
+    margin-right: 0.5rem;
+    font-size: 1.8rem;
+}
+.ticket-category p {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+.ticket-info {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 75%;
+}
+.ticket-time {
+    color: #5d5d5d;
+    text-align: right;
+}
+.current-category {
+    border: 2px solid #c467e6;
+}
+.newest-ticket {
+    background-color: #fff;
+    font-size: 1.1rem;
+    box-shadow: 0px 1px 30px 0px rgba(0,0,0,0.06);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 10px solid #c467e6;
+}
+.from {
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+.from span {
+    font-weight: 400;
+}
+.subject {
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 0.3rem;
+}
+.newest-assigned-container {
+   display: none;
+}
+.newest-waiting-container {
+    display: none;
+}
+.newest-onhold-container {
+    display: none;
+}
