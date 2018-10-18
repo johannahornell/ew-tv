@@ -28,7 +28,7 @@
             Authorization: 'Bearer ' + access_token
           },
           success: function (response) {
-            var artists = response.item.artists.map(artist => artist.name);
+            var artists = response.item.artists.map(artist => " " + artist.name);
             var title = response.item.name;
             var songTime = response.progress_ms;
 
@@ -51,6 +51,7 @@
       }
       setInterval(function () {
         getMusic()
+        console.log("time tick")
       }, 1000);
 
     } else {
@@ -68,7 +69,7 @@
     setInterval(function () {
       console.log("refresh Login")
       refreshLogin();
-    }, 180000);
+    }, 1800000);
 
     function refreshToken() {
       console.log("Refresh Token");
