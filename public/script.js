@@ -200,40 +200,40 @@ $.ajax({
                 }
             }
         }
-        console.log(filtered);
-        jQuery.each(filtered, function (index, sum) {
+        
+        jQuery.each(filtered, function(index, sum) {
 
             $(".top-team-container").append(
                 "<div class='top-team'>" +
-                "<span class='top-name'>" + sum.name.slice(2).toLowerCase() + "</span>" +
-                "<div class='hexagon-container'>" +
-                "<div class='hexagon2 hexagon-mission'>" +
-                "<div class='hexagon-text'>" +
-                "<span>" + sum.missionCount + "</span>" +
-                "</div>" +
-                "</div>" +
-                "<div class='hexagon2 hexagon-quest'>" +
-                "<div class='hexagon-text'>" +
-                "<span>" + sum.questCount + "</span>" +
-                "</div>" +
-                "</div>" +
-                "<div class='hexagon2 hexagon-sidequest'>" +
-                "<div class='hexagon-text'>" +
-                "<span>" + 0 + "</span>" +
-                "</div>" +
-                "</div>" +
-                "</div>" +
-                "<span class='xp-points'>" + Math.round(345 * sum.missionCount) + "XP</span>" +
+                    "<span class='top-name'>" + sum.name.slice(2).toLowerCase() + "</span>" +
+                        "<div class='hexagon-container'>" +
+                            "<div class='hexagon2 hexagon-mission'>" +
+                                "<div class='hexagon-text'>" +
+                                    "<span>" + sum.missionCount + "</span>" +
+                                "</div>" +
+                            "</div>" +
+                            "<div class='hexagon2 hexagon-quest'>" +
+                                "<div class='hexagon-text'>" +
+                                    "<span>" + sum.questCount + "</span>" +
+                                "</div>" +
+                            "</div>" +
+                            "<div class='hexagon2 hexagon-sidequest'>" +
+                                "<div class='hexagon-text'>" +
+                                    "<span>" + 0 + "</span>" +
+                                "</div>" +
+                            "</div>" +
+                        "</div>" +
+                    "<span class='xp-points'>" + Math.round(345 * sum.missionCount) + "XP</span>" +
                 "</div>"
             );
-
+    
             var $divs = $("div.top-team");
-            var numericallyOrderedDivs = $divs.sort(function (a, b) {
+            var numericallyOrderedDivs = $divs.sort(function(a, b) {
                 return parseInt($(a).find(".xp-points").text()) < parseInt($(b).find(".xp-points").text());
             });
             $(".top-team-container").html(numericallyOrderedDivs);
-
-        });
+    
+          });
 
         /* ----------------------------------------------------------------------------------------------------------------------------------------- */
 

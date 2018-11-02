@@ -3,10 +3,18 @@ var request = require('request'); // "Request" library
 var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
+var app = express();
+
+var port = 55555;
+
+console.log("listening on port: " + port)
+let ip = (__filename.indexOf("E:\\nodejshosts") === 0 ? "217.70.37.81" : "localhost");
+app.listen(port, ip);
 
 var client_id = '595cff25e5cf406a80bd1d5ec5193285'; // Your client id
 var client_secret = '630231c7f215459298cf67f8855106e0'; // Your secret
-var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+// var redirect_uri = 'http://217.70.37.81:55555/callback'; // Your redirect uri
+var redirect_uri = 'http://' + ip + ':' + port + '/callback'; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
@@ -25,7 +33,6 @@ var generateRandomString = function (length) {
 
 var stateKey = 'spotify_auth_state';
 
-var app = express();
 
 app.use(express.static(__dirname + '/public'))
   .use(cors())
@@ -82,6 +89,7 @@ app.get('/callback', function (req, res) {
       json: true
 
     };
+    console.log(authOptions);
     request.post(authOptions, function (error, response, body) {
       if (!error && response.statusCode === 200) {
 
@@ -142,7 +150,3 @@ app.get('/refresh_token', function (req, res) {
     }
   });
 });
-
-let port = process.env.PORT || 8888
-console.log("Listening on port: " + port)
-app.listen(8888);
